@@ -6,5 +6,5 @@
 CND_BASEDIR=`pwd`
 # default configuration
 CND_ARTIFACT_DIR_default=dist/default/production
-CND_ARTIFACT_NAME_default=C-T3-GPIO.X.production.hex
-CND_ARTIFACT_PATH_default=dist/default/production/C-T3-GPIO.X.production.hex
+CND_ARTIFACT_NAME_default=PIC18F57Q43-C-T3.production.hex
+CND_ARTIFACT_PATH_default=dist/default/production/PIC18F57Q43-C-T3.production.hex

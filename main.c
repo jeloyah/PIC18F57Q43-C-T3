@@ -35,31 +35,33 @@ void main(void) {
     /* infinite loop */
     while(1)
     {
-     switch(PORTA)   /* Read PORTA */
+     switch(PORTB)   /* Read PORTB */
      {
-         case 0x60:         /* Compare PortA with 0x70 (RA7 button is closed) */
-            LATF = 0x03;    /* RF3:RF0 = on-on-off-off */
+         case 0x06:         /* RB3 button is closed */
+            LATD = 0x70;    /* RD6:RD4 = on-on-on */
             TIMER0_Delay_ms(500);     /* Delay subroutine */
-            LATF = 0x0C;    /* RF3:RF0 = off-off-on-on */
+            LATD = 0x00;    /* RD6:RD4 = off-off-off */
             TIMER0_Delay_ms(500);     /* Delay subroutine */
             break;
          
-         case 0xA0:         /* Compare PortA with 0xB0 (RA6 button is closed) */ 
-            LATF = 0x06;    /* RF3:RF0 = on-off-off-on */
+         case 0x0A:         /* RB2 button is closed */ 
+            LATD = 0x50;    /* RD6:RD4 = off-on-off */
             TIMER0_Delay_ms(500);     /* Delay subroutine */
-            LATF = 0x09;    /* RF3:RF0 = off-on-on-off */
+            LATD = 0x20;    /* RD6:RD4 = on-off-on */
             TIMER0_Delay_ms(500);     /* Delay subroutine */
             break;
              
-         case 0xC0:         /* Compare PortA with 0xC0 (RA5 button is closed)*/
-            LATF = 0x0A;    /* RF3:RF0 = off-on-off-on */
+         case 0x0C:         /* RB1 button is closed */
+            LATD = 0x30;    /* RD6:RD4 = off-on-on */
             TIMER0_Delay_ms(500);     /* Delay subroutine */
-            LATF = 0x05;    /* RF3:RF0 = on-off-on-off */
+            LATD = 0x50;    /* RD6:RD4 = on-off-on */
+            TIMER0_Delay_ms(500);     /* Delay subroutine */          
+            LATD = 0x60;    /* RD6:RD4 = on-on-off */
             TIMER0_Delay_ms(500);     /* Delay subroutine */          
             break;
                          
          default:           /* No button closed (all buttons opened) */
-            LATF = 0x0F;    /* RF3:RF0 = off-off-off-off */
+            LATD = 0x70;    /* RD6:RD4 = off-off-off */
             break;
      } /* end switch */
         

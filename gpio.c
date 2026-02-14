@@ -11,10 +11,10 @@ void PortA_Initialize(void)
     /* Pins as digital I/O */
     ANSELA = 0x00;
     
-    /* Enable pull-up for RA7:RA5, disable pull-up for RA4:RA0 */
+    /* Disable pull-ups */
     WPUA = 0x00;
         
-    /* RA7:RA5 as input, RA4:RA0 as output */
+    /* RA7:RA0 as output */
     TRISA = 0x00;
 }
 
@@ -22,7 +22,7 @@ void PortA_Initialize(void)
 void PortB_Initialize(void)
 {
     /* Clear register */
-    LATB = 0x10;
+    LATB = 0x00;
     
     /* Pins as digital I/O */
     ANSELB = 0x00;
@@ -30,7 +30,7 @@ void PortB_Initialize(void)
     /* Disable Rpull-ups */
     WPUB = 0x00;
         
-    /* RB4 as input, rest as output */
+    /* PortB as output */
     TRISB = 0x00;
 }
 
@@ -38,7 +38,7 @@ void PortB_Initialize(void)
 void PortC_Initialize(void)
 {
     /* Clear register */
-    LATC = 0x00;
+    LATA = 0x00;
     
     /* Pins as digital I/O */
     ANSELC = 0x00;
@@ -46,7 +46,7 @@ void PortC_Initialize(void)
     /* Disable Rpull-ups */
     WPUC = 0x00;
         
-    /* PortC as outputs */
+    /* PortC as output */
     TRISC = 0x00;
 }
     
@@ -62,7 +62,7 @@ void PortD_Initialize(void)
     /* Disable Rpull-ups */
     WPUD = 0x00;
         
-    /* PortD as outputs */
+    /* RD6:RD4 as input; RD7, RD3:RD0 as output */
     TRISD = 0x00;
 }
 
@@ -78,7 +78,7 @@ void PortE_Initialize(void)
     /* Disable Rpull-ups */
     WPUE = 0x00;
         
-    /* PortE as outputs */
+    /* PortE as output */
     TRISE = 0x00;
 }    
 
@@ -94,6 +94,6 @@ void PortF_Initialize(void)
     /* Disable Rpull-ups */
     WPUF = 0x00;
         
-    /* PortF as outputs */
+    /* PortF as output */
     TRISF = 0x00;
 }
