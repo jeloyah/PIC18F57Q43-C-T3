@@ -30,7 +30,7 @@ void PortB_Initialize(void)
     /* Disable Rpull-ups */
     WPUB = 0x00;
         
-    /* PortB as output */
+    /* RB7:RB4, RB0 as output; RB3:RB1 as input */
     TRISB = 0x00;
 }
 
